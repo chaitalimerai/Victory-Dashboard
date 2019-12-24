@@ -1,16 +1,883 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<style>
-body
-{
-Background-color:red;
-}	
-</style>
-<title>Page Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Victory</title>
+    <link rel="stylesheet" href="./assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico|Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
-<h1>This is a Heading</h1>
-<p>This is a paragraph.</p>
+    <!-- start: header -->
+    <header id="top-header" class="navbar navbar-expand-lg navbar-light py-0 pl-0 pr-4">
+        <div class="navbar-logo d-none d-md-flex bg-light py-3 justify-content-center">
+            <h3 class="mb-0 text-primarys">V Victory</h3>
+        </div>
+        <label class="fa fa-bars fa fa-lg sidebar-toggler text-white mr-4 mb-0 pl-4" for="sidebar-toggler"></label>
+        <button type="button" class="btn btn-danger custom-create-btn my-2 my-lg-0"><span
+                class="fa fa-plus mr-1"></span>
+            Create
+            New</button>
+        <button class="navbar-toggler ml-auto border-0" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="fa fa-ellipsis-v fa fa-lg text-light"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav d-sm-flex ml-auto nav-flex-icons align-items-center my-3 my-lg-0">
+                <li class="nav-item d-flex mr-3">
+                    <img src="assets/images/flag.png" height="20">
+                </li>
+                <li class="nav-item dropdown mr-3">
+                    <div class="btn-group">
+                        <button class="btn rounded-none dropdown-toggle custom-dropdown-btn" type="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            English
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-left dropdown-menu-lg-right">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Separated link</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item d-flex">
+                    <div class="notification-bg notification-badge position-relative rounded-circle mr-3">
+                        <span class="fa fa-bell text-white"></span>
+                    </div>
+                    <div class="notification-bg notification-badge position-relative rounded-circle mr-3">
+                        <span class="fa fa-envelope text-white"></span>
+                    </div>
+                    <div class="notification-bg rounded-circle mr-1">
+                        <span class="fa fa-th-large text-white"></span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <!-- start : header -->
+    <div class="container-fluid h-100 px-0" id="wrapper">
+        <!-- start: sidebar -->
+        <input type="checkbox" name="sidebar-toggler" id="sidebar-toggler">
+        <aside id="primary-nav" class="h-100 d-flex flex-column">
+            <nav role="tablist" aria-orientation="vertical" class="h-100 overflow-auto scrollbar custom-scrollbar"
+                style="padding-bottom: 50px;">
+                <div class="d-flex flex-column align-items-center">
+                    <div class="mt-3 position-relative profile-badge">
+                        <img src="assets/images/user-profile.png" class="" alt="User Profile">
+                    </div>
+                    <h6 class="mb-0 mt-1 text-darks">Marina Michel</h6>
+                    <small class="text-lights mt-1">Super Admin</small>
+                </div>
+                <div class="d-flex flex-column pt-5 nav">
+                    <a class="mx-1 nav-link nav-menu-item" id="v-pills-dashboard-tab" data-toggle="pill"
+                        href="#v-pills-dashboard" role="tab" aria-controls="v-pills-dashboard" aria-selected="true">
+                        <span class="nav-icon fa fa-th-large"></span>
+                        <span class="nav-list-item ml-3 mr-auto">Dashboard</span>
+                        <span class="badge badge-success">New</span>
+                    </a>
+                    <a class="mx-1 nav-link nav-menu-item" id="v-pills-profile-tab" data-toggle="pill"
+                        href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">
+                        <span class="nav-icon fa fa-user-circle-o"></span>
+                        <span class="nav-list-item ml-3">widgets</span>
+                    </a>
+                    <a class="mx-1 nav-link nav-menu-item" id="v-pills-librabry-tab" data-toggle="pill"
+                        href="#v-pills-librabry" role="tab" aria-controls="v-pills-librabry" aria-selected="false">
+                        <span class="nav-icon fa fa-book"></span>
+                        <span class="nav-list-item ml-3 mr-auto">Page Layout</span>
+                        <span class="badge badge-success bg-orange">3</span>
+                    </a>
+                    <a class="mx-1 nav-link nav-menu-item" id="v-pills-shortlist-tab" data-toggle="pill"
+                        href="#v-pills-shortlist" role="tab" aria-controls="v-pills-shortlist" aria-selected="false">
+                        <span class="nav-icon fa fa-align-right"></span>
+                        <span class="nav-list-item ml-3 mr-auto">Sider Layouts</span>
+                        <span class="badge badge-warning text-white">5</span>
+                    </a>
+                    <a class="mx-1 nav-link nav-menu-item" data-toggle="pill" href="#v-pills-inbox" role="tab"
+                        id="v-pills-inbox-tab" aria-controls="v-pills-inbox" aria-selected="false">
+                        <span class="nav-icon fa fa-envelope"></span>
+                        <span class="nav-list-item ml-3 mr-auto ">basic ui elements</span>
+                        <span class="badge badge-success">10</span>
+                    </a>
+                    <a class="mx-1 nav-link nav-menu-item" data-toggle="pill" href="#v-pills-inbox" role="tab"
+                        id="v-pills-inbox-tab" aria-controls="v-pills-inbox" aria-selected="false">
+                        <span class="nav-icon fa fa-envelope"></span>
+                        <span class="nav-list-item ml-3 mr-auto ">advancved elements</span>
+                        <span class="badge badge-primary">10</span>
+                    </a>
+                    <a class="mx-1 nav-link nav-menu-item" data-toggle="pill" href="#v-pills-inbox" role="tab"
+                        id="v-pills-inbox-tab" aria-controls="v-pills-inbox" aria-selected="false">
+                        <span class="nav-icon fa fa-envelope"></span>
+                        <span class="nav-list-item ml-3 mr-auto ">form elements</span>
+                        <span class="badge bg-orange">10</span>
+                    </a>
+                    <a class="mx-1 nav-link nav-menu-item" data-toggle="pill" href="#v-pills-inbox" role="tab"
+                        id="v-pills-inbox-tab" aria-controls="v-pills-inbox" aria-selected="false">
+                        <span class="nav-icon fa fa-envelope"></span>
+                        <span class="nav-list-item ml-3 mr-auto ">editors</span>
+                        <span class="badge bg-purple">10</span>
+                    </a>
+                    <a class="mx-1 nav-link nav-menu-item" data-toggle="pill" href="#v-pills-inbox" role="tab"
+                        id="v-pills-inbox-tab" aria-controls="v-pills-inbox" aria-selected="false">
+                        <span class="nav-icon fa fa-envelope"></span>
+                        <span class="nav-list-item ml-3 mr-auto ">charts</span>
+                        <span class="badge badge-warning text-white">5</span>
+                    </a>
+                    <a class="mx-1 nav-link nav-menu-item" data-toggle="pill" href="#v-pills-inbox" role="tab"
+                        id="v-pills-inbox-tab" aria-controls="v-pills-inbox" aria-selected="false">
+                        <span class="nav-icon fa fa-envelope"></span>
+                        <span class="nav-list-item ml-3 mr-auto ">tables</span>
+                        <span class="badge bg-purple">5</span>
+                    </a>
+                    <a class="mx-1 nav-link nav-menu-item" data-toggle="pill" href="#v-pills-inbox" role="tab"
+                        id="v-pills-inbox-tab" aria-controls="v-pills-inbox" aria-selected="false">
+                        <span class="nav-icon fa fa-envelope"></span>
+                        <span class="nav-list-item ml-3 mr-auto ">popups</span>
+                    </a>
+                    <a class="mx-1 nav-link nav-menu-item" data-toggle="pill" href="#v-pills-inbox" role="tab"
+                        id="v-pills-inbox-tab" aria-controls="v-pills-inbox" aria-selected="false">
+                        <span class="nav-icon fa fa-envelope"></span>
+                        <span class="nav-list-item ml-3 mr-auto ">notifications</span>
+                    </a>
+                    <a class="mx-1 nav-link nav-menu-item" data-toggle="pill" href="#v-pills-inbox" role="tab"
+                        id="v-pills-inbox-tab" aria-controls="v-pills-inbox" aria-selected="false">
+                        <span class="nav-icon fa fa-envelope"></span>
+                        <span class="nav-list-item ml-3 mr-auto ">icons</span>
+                        <span class="badge bg-purple">5</span>
+                    </a>
+                    <a class="mx-1 nav-link nav-menu-item" data-toggle="pill" href="#v-pills-inbox" role="tab"
+                        id="v-pills-inbox-tab" aria-controls="v-pills-inbox" aria-selected="false">
+                        <span class="nav-icon fa fa-envelope"></span>
+                        <span class="nav-list-item ml-3 mr-auto ">maps</span>
+                        <span class="badge badge-success">10</span>
+                    </a>
+                    <a class="mx-1 nav-link nav-menu-item" data-toggle="pill" href="#v-pills-inbox" role="tab"
+                        id="v-pills-inbox-tab" aria-controls="v-pills-inbox" aria-selected="false">
+                        <span class="nav-icon fa fa-envelope"></span>
+                        <span class="nav-list-item ml-3 mr-auto ">user pages</span>
+                        <span class="badge badge-success">10</span>
+                    </a>
+                    <a class="mx-1 nav-link nav-menu-item" data-toggle="pill" href="#v-pills-inbox" role="tab"
+                        id="v-pills-inbox-tab" aria-controls="v-pills-inbox" aria-selected="false">
+                        <span class="nav-icon fa fa-envelope"></span>
+                        <span class="nav-list-item ml-3 mr-auto ">error pages</span>
+                        <span class="badge badge-primary">10</span>
+                    </a>
+                    <a class="mx-1 nav-link nav-menu-item" data-toggle="pill" href="#v-pills-inbox" role="tab"
+                        id="v-pills-inbox-tab" aria-controls="v-pills-inbox" aria-selected="false">
+                        <span class="nav-icon fa fa-envelope"></span>
+                        <span class="nav-list-item ml-3 mr-auto ">general pages</span>
+                        <span class="badge badge-warning text-white">5</span>
+                    </a>
+                    <a class="mx-1 nav-link nav-menu-item" data-toggle="pill" href="#v-pills-inbox" role="tab"
+                        id="v-pills-inbox-tab" aria-controls="v-pills-inbox" aria-selected="false">
+                        <span class="nav-icon fa fa-envelope"></span>
+                        <span class="nav-list-item ml-3 mr-auto ">e-commerce</span>
+                    </a>
+                    <a class="mx-1 nav-link nav-menu-item" data-toggle="pill" href="#v-pills-inbox" role="tab"
+                        id="v-pills-inbox-tab" aria-controls="v-pills-inbox" aria-selected="false">
+                        <span class="nav-icon fa fa-envelope"></span>
+                        <span class="nav-list-item ml-3 mr-auto ">e-mail</span>
+                    </a>
+                    <a class="mx-1 nav-link nav-menu-item" data-toggle="pill" href="#v-pills-inbox" role="tab"
+                        id="v-pills-inbox-tab" aria-controls="v-pills-inbox" aria-selected="false">
+                        <span class="nav-icon fa fa-envelope"></span>
+                        <span class="nav-list-item ml-3 mr-auto ">calendar</span>
+                    </a>
+                    <a class="mx-1 nav-link nav-menu-item" data-toggle="pill" href="#v-pills-inbox" role="tab"
+                        id="v-pills-inbox-tab" aria-controls="v-pills-inbox" aria-selected="false">
+                        <span class="nav-icon fa fa-envelope"></span>
+                        <span class="nav-list-item ml-3 mr-auto ">gallery</span>
+                    </a>
+                    <a class="mx-1 nav-link nav-menu-item active" data-toggle="pill" href="#v-pills-inbox" role="tab"
+                        id="v-pills-inbox-tab" aria-controls="v-pills-inbox" aria-selected="false">
+                        <span class="nav-icon fa fa-envelope"></span>
+                        <span class="nav-list-item ml-3 mr-auto ">documentation</span>
+                    </a>
+                </div>
+                <div class="mx-3 p-1 mt-4 mb-2">
+                    <div class="d-flex">
+                        <h6 class="text-lights mr-auto">Today's Sales</h6>
+                        <h6 class="text-darks">50 sold</h6>
+                    </div>
+                    <div class="progress custom-progress">
+                        <div class="progress-bar custom-progress-bar" role="progressbar" aria-valuenow="25"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                <div class="mx-3 p-1 mt-2 mb-4">
+                    <div class="d-flex">
+                        <h6 class="text-lights mr-auto">Customer target</h6>
+                        <h6 class="text-darks">50 sold</h6>
+                    </div>
+                    <div class="progress custom-progress">
+                        <div class="progress-bar custom-progress-bar-orange" role="progressbar" aria-valuenow="25"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </nav>
+        </aside>
+        <!-- end: sidebar -->
+
+        <!-- start: content wrapper -->
+        <main id="content-wrapper" class="container-fluid h-100 px-0">
+
+            <!-- start: content body -->
+            <div class="border-green content-body row no-gutters h-100 mb-6">
+                <div class="h-100 overflow-auto w-100 scrollbar custom-scrollbar mb-6">
+                    <!-- order block -->
+                    <div class="row mx-2 mt-6">
+                        <div class="col-sm-12 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                            <div class="d-flex white-boxes h-100 p-5">
+                                <div class="mr-3">
+                                    <span class="fa fa-shopping-bag white-boxes-icon text-green"></span>
+                                </div>
+                                <div>
+                                    <h6 class="mb-0 text-darks">Daily Order</h6>
+                                    <h6 class="mt-1"><strong>122334454</strong></h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                            <div class="d-flex white-boxes h-100 p-5">
+                                <div class="mr-3"><span class="fa fa-rocket white-boxes-icon text-orange"></span>
+                                </div>
+                                <div>
+                                    <h6 class="mb-0 text-darks">Task Completed</h6>
+                                    <h6 class="mt-1"><strong>122334454</strong></h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-3 mb-4 mb-md-0 ">
+                            <div class="d-flex white-boxes h-100 p-5">
+                                <div class="mr-3"><span class="fa fa-diamond white-boxes-icon text-purples"></span>
+                                </div>
+                                <div>
+                                    <h6 class="mb-0 text-darks">Monthly Sales</h6>
+                                    <h6 class="mt-1"><strong>122334454</strong></h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-3">
+                            <div class="d-flex white-boxes h-100 p-5">
+                                <div class="mr-3"><span class="fa fa-area-chart white-boxes-icon text-orange"></span>
+                                </div>
+                                <div>
+                                    <h6 class="mb-0 text-darks">Total Revenue</h6>
+                                    <h6 class="mt-1"><strong>122334454</strong></h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- review block -->
+                    <div class="row mx-2 mt-6">
+                        <div class="col-sm-12 col-md-6 mb-4 mb-md-0">
+                            <div class="white-boxes p-5 h-100">
+                                <div class="d-flex flex-column">
+                                    <div class="w-100 mb-3">
+                                        <h6 class="mb-0 w-100"><strong>Reviews</strong></h6>
+                                    </div>
+                                    <div class="d-flex align-items-center border-bottom py-3">
+                                        <div class="mr-3">
+                                            <img src="assets/images/user-profile.png">
+                                        </div>
+                                        <div class="w-100">
+                                            <h6 class="text-darks">Sharah graves</h6>
+                                            <small class="text-lights"><strong>Awesome!!! hioghly
+                                                    recomended</strong></small>
+                                        </div>
+                                        <div class="white-space-nowrap">
+                                            <span class="fa fa-star fa-lg text-warning"></span>
+                                            <span class="fa fa-star fa-lg text-warning"></span>
+                                            <span class="fa fa-star fa-lg text-warning"></span>
+                                            <span class="fa fa-star fa-lg text-grey"></span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center border-bottom py-3">
+                                        <div class="mr-3">
+                                            <img src="assets/images/user-profile.png">
+                                        </div>
+                                        <div class="w-100">
+                                            <h6 class="text-darks">Sharah graves</h6>
+                                            <small class="text-lights"><strong>Awesome!!! hioghly
+                                                    recomended</strong></small>
+                                        </div>
+                                        <div class="white-space-nowrap">
+                                            <span class="fa fa-star  fa-lg text-warning"></span>
+                                            <span class="fa fa-star  fa-lg text-warning"></span>
+                                            <span class="fa fa-star  fa-lg text-warning"></span>
+                                            <span class="fa fa-star  fa-lg text-grey"></span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center border-bottom py-3"
+                                        style="border-bottom: 1px solid black;">
+                                        <div class="mr-3">
+                                            <img src="assets/images/user-profile.png">
+                                        </div>
+                                        <div class="w-100">
+                                            <h6 class="text-darks">Sharah graves</h6>
+                                            <small class="text-lights"><strong>Awesome!!! hioghly
+                                                    recomended</strong></small>
+                                        </div>
+                                        <div class="white-space-nowrap">
+                                            <span class="fa fa-star  fa-lg text-warning"></span>
+                                            <span class="fa fa-star  fa-lg text-grey"></span>
+                                            <span class="fa fa-star  fa-lg text-grey"></span>
+                                            <span class="fa fa-star  fa-lg text-grey"></span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center border-bottom py-3"
+                                        style="border-bottom: 1px solid black;">
+                                        <div class="mr-3">
+                                            <img src="assets/images/user-profile.png">
+                                        </div>
+                                        <div class="w-100">
+                                            <h6 class="text-darks">Sharah graves</h6>
+                                            <small class="text-lights"><strong>Awesome!!! hioghly
+                                                    recomended</strong></small>
+                                        </div>
+                                        <div class="white-space-nowrap">
+                                            <span class="fa fa-star  fa-lg text-warning"></span>
+                                            <span class="fa fa-star  fa-lg text-warning"></span>
+                                            <span class="fa fa-star  fa-lg text-grey"></span>
+                                            <span class="fa fa-star  fa-lg text-grey"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6 ">
+                            <div class="row no-gutters w-100 p-5 mt-6 white-boxes">
+                                <div class="w-100 mb-3">
+                                    <h6 class="mb-0 w-100"><strong>Statastics</strong></h6>
+                                </div>
+                                <div class="d-flex my-2 w-100 align-items-center">
+                                    <div class="mr-auto">
+                                        <div class="d-flex flex-wrap align-items-center">
+                                            <h3 class="mb-0 mr-3"><strong>$ 10,200</strong></h3>
+                                            <span class="text-darks"><span class="fa fa-clock-o fa-lg mr-2 text-grey"
+                                                    aria-hidden="true"></span class="mr-3">Updated: 9:10pm</span>
+                                        </div>
+                                        <small class="text-lights"><strong>Raised from 89 orders</strong></small>
+                                    </div>
+                                    <div class="statastics-icon-box bg-green">
+                                        <span class="fa fa-stack-exchange fa-2x text-white"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row no-gutters w-100 p-5 mt-6 white-boxes">
+                                <div class="w-100 mb-3">
+                                    <h6 class="mb-0 w-100"><strong>Daily Order</strong></h6>
+                                </div>
+                                <div class="d-flex my-2 w-100 align-items-center">
+                                    <div class="mr-auto">
+                                        <div class="d-flex flex-wrap align-items-center">
+                                            <h3 class="mb-0 mr-3"><strong>$ 2256</strong></h3>
+                                            <span class="text-darks"><span class="fa fa-clock-o fa-lg mr-2 text-grey"
+                                                    aria-hidden="true"></span class="mr-3">Updated: 9:10pm</span>
+                                        </div>
+                                        <small class="text-lights"><strong>Raised from 89 orders</strong></small>
+                                    </div>
+                                    <div class="statastics-icon-box bg-yellow">
+                                        <span class="fa fa-suitcase fa-2x text-white"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- growth block -->
+                    <div class="row mx-2 mt-6">
+                        <div class="col-sm-12 col-md-12 col-lg-4 mb-4 mb-lg-0">
+                            <div class="h-100">
+                                <!-- growth -->
+                                <div class="white-boxes p-5">
+                                    <div class="d-flex w-100">
+                                        <h6 class="mb-0"><strong>Growth</strong></h6>
+                                    </div>
+                                    <div class="row w-100 mb-4">
+                                        <div
+                                            class="percent-devider col-6 col-sm-6 col-md-6 d-flex flex-column align-items-center mt-3">
+                                            <h6 class="mb-2"><strong>63%</strong></h6>
+                                            <h6 class="text-darks">Monthly</h6>
+                                        </div>
+                                        <div class="col-6 col-sm-6 col-md-6 d-flex flex-column align-items-center mt-3">
+                                            <h6 class="mb-2"><strong>20%</strong></h6>
+                                            <h6 class="text-darks">Daily</h6>
+                                        </div>
+                                    </div>
+                                    <div class="row justify-content-center">
+                                        <img src="assets/images/chart1.png" class="img-fluid">
+                                    </div>
+                                </div>
+                                <!-- page-views -->
+                                <div class="bg-purple p-5 mt-6">
+                                    <h6 class="mb-0 text-white"><strong>Page View</strong></h6>
+                                    <h6 class="mb-0 text-white">3669.25</h6>
+                                    <img src="assets/images/chart2.png" alt="Page View Chart" class="img-fluid">
+                                    <h6 class="mb-0 text-white mt-3">View Details </h6>
+                                </div>
+                                <!-- donations -->
+                                <div class="bg-green p-5 mt-6">
+                                    <h6 class="mb-0 text-white"><strong>Donations</strong></h6>
+                                    <h6 class="mb-0 text-white">$56569</h6>
+                                    <img src="assets/images/chart3.png" alt="Donation Chart" class="img-fluid">
+                                    <h6 class="mb-0 text-white mt-3">View Details </h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-lg-4 mb-4 mb-lg-0">
+                            <div class="h-100 white-boxes p-5">
+                                <div class="d-flex w-100">
+                                    <h6 class="mb-0"><strong>Daily Sales</strong></h6>
+                                </div>
+                                <div class="row w-100 mb-4">
+                                    <div class="col-6 col-sm-6 col-md-6 d-flex flex-column align-items-center mt-3">
+                                        <h6 class="mb-2"><strong>$656567</strong></h6>
+                                        <h6 class="text-darks">Monthly</h6>
+                                    </div>
+                                    <div class="col-6 col-sm-6 col-md-6 d-flex flex-column align-items-center mt-3">
+                                        <h6 class="mb-2"><strong>5423</strong></h6>
+                                        <h6 class="text-darks">Compaign</h6>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <img src="assets/images/chart4.png" class="img-fluid">
+                                </div>
+
+                                <div class="row w-100 mb-4 justify-content-between">
+                                    <div class="col-sm-12 col-md-12 col-xl-6 px-0">
+                                        <h6 class="mb-2 white-space-nowrap mt-3">
+                                            <span class="fa fa-circle text-primarys mr-2"></span>
+                                            Download
+                                            Sales
+                                        </h6>
+                                    </div>
+                                    <div class="col-sm-12 col-md-12 col-xl-6 ">
+                                        <h6 class="mb-2 white-space-nowrap mt-3 pl-2"><span
+                                                class="fa fa-circle text-primarys mr-2"></span>In-Store
+                                            Sales
+                                        </h6>
+                                    </div>
+                                </div>
+                                <div class="row w-100 mb-4 justify-content-center">
+                                    <h6 class="mb-2 white-space-nowrap text-center">
+                                        <span class="fa fa-circle text-lights mr-1"></span>
+                                        Mail Order Sales
+                                        Sales
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-lg-4">
+                            <div class="h-100 white-boxes p-5">
+                                <div class="d-flex w-100">
+                                    <h6 class="mb-0"><strong>Total Revenue</strong></h6>
+                                </div>
+                                <div class="row w-100 mb-4">
+                                    <div class="col-6 col-sm-6 col-md-6 d-flex flex-column align-items-center mt-3">
+                                        <h6 class="mb-2"><strong>$656567</strong></h6>
+                                        <h6 class="text-darks">Total Sales</h6>
+                                    </div>
+                                    <div class="col-6 col-sm-6 col-md-6 d-flex flex-column align-items-center mt-3">
+                                        <h6 class="mb-2"><strong>5423</strong></h6>
+                                        <h6 class="text-darks white-space-nowrap">open Compaign</h6>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <img src="assets/images/chart5.png" class="img-fluid">
+                                </div>
+                                <div class="row w-100 mb-4">
+                                    <div class="col-6 col-sm-6 col-md-6 d-flex flex-column align-items-center mt-3">
+                                        <h6 class="mb-2"><strong>$656567</strong></h6>
+                                        <h6 class="text-darks">Online Sales</h6>
+                                    </div>
+                                    <div class="col-6 col-sm-6 col-md-6 d-flex flex-column align-items-center mt-3">
+                                        <h6 class="mb-2"><strong>5423</strong></h6>
+                                        <h6 class="text-darks">Store Sales</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- data-table -->
+                    <div class="row mx-4 mt-6">
+                        <div class="white-boxes p-4 w-100">
+                            <div
+                                class="data-table table-responsive h-100 overflow-auto scrollbar custom-scrollbar w-100">
+                                <div class="row mx-2">
+                                    <h6><strong>Order Status</strong></h6>
+                                </div>
+                                <div class="d-flex flex-wrap justify-content-center align-items-center mx-2">
+                                    <div class="mr-3">
+                                        <button type="button" class="btn bg-purple"><span
+                                                class="fa fa-plus-circle mr-1"></span>Add</button>
+                                    </div>
+                                    <div class="d-flex flex-wrap mr-3">
+                                        <div class="btn-group btn-group-toggle w-50" data-toggle="buttons">
+                                            <label class="btn btn btn-outline-light">
+                                                <button type="button" class="bg-transparent border-0" name="warning-btn"
+                                                    id="option1" autocomplete="off">
+                                                    <span class="fa fa-exclamation-circle"
+                                                        aria-hidden="true"></span></button>
+                                            </label>
+                                            <label class="btn btn btn-outline-light">
+                                                <button type="button" class="bg-transparent border-0" name="delete-btn"
+                                                    id="option2" autocomplete="off">
+                                                    <span class="fa fa-trash" aria-hidden="true"></span></button>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-wrap py-2">
+                                        <div class="btn-group btn-group-toggle w-50 " data-toggle="buttons">
+                                            <label class="btn btn btn-outline-light">
+                                                <button type="button" class="bg-transparent border-0" name="print-btn"
+                                                    id="option2" autocomplete="off">
+                                                    <span class="fa fa-print" aria-hidden="true"></span></button>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="ml-auto">
+                                        <div class="mr-3">
+                                            <form>
+                                                <input type="search" name="search" class="form-control search"
+                                                    id="inputSearch" aria-describedby="emailHelp" placeholder="Search">
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex py-2 mr-3">
+                                        <div class="btn-group btn-group-toggle w-50" data-toggle="buttons">
+                                            <label class="btn btn btn-outline-light">
+                                                <button type="button" class="bg-transparent border-0" name="warning-btn"
+                                                    id="option1" autocomplete="off">
+                                                    <span class="fa fa-exclamation-circle"
+                                                        aria-hidden="true"></span></button>
+                                            </label>
+                                            <label class="btn btn btn-outline-light">
+                                                <button type="button" class="bg-transparent border-0" name="delete-btn"
+                                                    id="option2" autocomplete="off">
+                                                    <span class="fa fa-trash" aria-hidden="true"></span></button>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row no-gutters table-responsive mt-3">
+                                    <table class="table data-table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Invoice</th>
+                                                <th scope="col">Customer</th>
+                                                <th scope="col">Ship</th>
+                                                <th scope="col">Best Price</th>
+                                                <th scope="col">Purchase Price</th>
+                                                <th scope="col">Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th>1</th>
+                                                <td>Mark</td>
+                                                <td>Otto</td>
+                                                <td>@mdo</td>
+                                                <td>@mdo</td>
+                                                <!-- <td><button type="button" class="btn btn-sucess">Progress</button></td> -->
+                                                <td><button class="btn btn-success" type="submit">Progress</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>2</th>
+                                                <td>Jacob</td>
+                                                <td>Thornton</td>
+                                                <td>@fat</td>
+                                                <td>@fat</td>
+                                                <!-- <td><button type="button" class="btn btn-sucess">Open</button></td> -->
+                                                <td><button class="btn bg-warning text-white"
+                                                        type="submit">Progress</button></td>
+                                            </tr>
+                                            <tr>
+                                                <th>3</th>
+                                                <td>Larry</td>
+                                                <td>the Bird</td>
+                                                <td>@twitter</td>
+                                                <td>@twitter</td>
+                                                <!-- <td><button type="button" class="btn btn-sucess">On Hold</button></td> -->
+                                                <td><button class="btn bg-orange" type="submit">Progress</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>3</th>
+                                                <td>Larry</td>
+                                                <td>the Bird</td>
+                                                <td>@twitter</td>
+                                                <td>@twitter</td>
+                                                <td><button class="btn btn-success" type="submit">Progress</button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="d-flex flex-wrap justify-content-center align-items-center">
+                                    <div class="mr-md-auto py-2">
+                                        <h6>Showing 1 to 20 of 20 entries</h6>
+                                    </div>
+                                    <div>
+                                        <nav aria-label="Page navigation example">
+                                            <ul class="pagination mb-0">
+                                                <li class="page-item">
+                                                    <a class="page-link text-dark" href="#" aria-label="Previous">
+                                                        <span aria-hidden="true">&laquo;</span>
+                                                        <span class="sr-only">Previous</span>
+                                                    </a>
+                                                </li>
+                                                <li class="page-item"><a class="page-link text-white bg-purple"
+                                                        href="#">1</a></li>
+                                                <li class="page-item"><a class="page-link text-dark" href="#">2</a>
+                                                </li>
+                                                <li class="page-item"><a class="page-link text-dark" href="#">3</a>
+                                                </li>
+                                                <li class="page-item">
+                                                    <a class="page-link text-dark" href="#" aria-label="Next">
+                                                        <span aria-hidden="true">&raquo;</span>
+                                                        <span class="sr-only">Next</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Monthly anlystic -->
+                    <div class="row mx-4 mt-6">
+                        <div class="white-boxes py-4 px-4 w-100">
+                            <div class="d-flex flex-column w-100">
+                                <h6 class="text-dark w-100"><strong>Monthly anlystic</strong></h6>
+                                <p class="text-dark">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio
+                                    dolorum
+                                    tempora
+                                    natus recusandae provident temporibus reprehenderit dolores quis rerum
+                                    ratione!
+                                </p>
+                            </div>
+                            <div class="d-flex flex-wrap w-100 align-items-center">
+                                <div class="mr-5 d-flex align-items-center">
+                                    <span class="p-2 mr-3 bg-purple"></span>
+                                    <h6 class="mb-0">Ios</h6>
+                                </div>
+                                <div class="mr-5 d-flex align-items-center">
+                                    <span class="p-2 mr-3 bg-success"></span>
+                                    <h6 class="mb-0">Android</h6>
+                                </div>
+                                <div class="mr-5 d-flex align-items-center">
+                                    <span class="p-2 mr-3 bg-warning"></span>
+                                    <h6 class="mb-0">Windows</h6>
+                                </div>
+                            </div>
+                            <div class="row pl-2">
+                                <img src="assets/images/chart6.png" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Activity -->
+                    <div class="row mx-2 mt-6">
+                        <div class="col-12 col-lg-4 mb-4 mb-lg-0">
+                            <div class="white-boxes p-4 h-100">
+                                <div class="d-flex flex-column">
+                                    <h6 class="mb-4 text-darks"><strong>Activity</strong></h6>
+                                    <p class="mb-3">Lorem ipsum dolor sit amet consectetur</p>
+                                </div>
+                                <div class="d-flex my-4">
+                                    <div class="mr-3 align-items-center">
+                                        <img src="assets/images/user-profile.png">
+                                    </div>
+                                    <div class="w-100 align-items-center">
+                                        <h6 class="text-darks">Lorem ipsum, dolor</h6>
+                                        <div class="d-flex">
+                                            <h6 class="text-darks mr-auto"><span
+                                                    class="fa fa-bell text-lights mr-2"></span>Awesome</h6>
+                                            <h6 class="mb-0 text-lights">2 hours ago</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="d-flex my-4">
+                                    <div class="mr-3 align-items-center">
+                                        <img src="assets/images/user-profile.png">
+                                    </div>
+                                    <div class="w-100 align-items-center">
+                                        <h6 class="text-darks">Lorem ipsum, dolor</h6>
+                                        <div class="d-flex">
+                                            <h6 class="text-darks mr-auto"><span
+                                                    class="fa fa-bell text-lights mr-2"></span>Awesome</h6>
+                                            <h6 class="mb-0 text-lights">2 hours ago</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="d-flex my-4">
+                                    <div class="mr-3 align-items-center">
+                                        <img src="assets/images/user-profile.png">
+                                    </div>
+                                    <div class="w-100 align-items-center">
+                                        <h6 class="text-darks">Lorem ipsum, dolor</h6>
+                                        <div class="d-flex">
+                                            <h6 class="text-darks mr-auto"><span
+                                                    class="fa fa-bell text-lights mr-2"></span>Awesome</h6>
+                                            <h6 class="mb-0 text-lights">2 hours ago</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="d-flex my-4">
+                                    <div class="mr-3 align-items-center">
+                                        <img src="assets/images/user-profile.png">
+                                    </div>
+                                    <div class="w-100 align-items-center">
+                                        <h6 class="text-darks">Lorem ipsum, dolor</h6>
+                                        <div class="d-flex">
+                                            <h6 class="text-darks mr-auto"><span
+                                                    class="fa fa-bell text-lights mr-2"></span>Awesome</h6>
+                                            <h6 class="mb-0 text-lights">2 hours ago</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-4 mb-4 mb-lg-0">
+                            <div class="white-boxes p-4 h-100">
+                                <div class="d-flex flex-column">
+                                    <h6 class="mb-4 text-darks"><strong>Sales Difference</strong></h6>
+                                    <p class="mb-3">Lorem ipsum dolor sit amet consectetur</p>
+                                </div>
+                                <di class="d-flex my-auto">
+                                    <img src="assets/images/chart7.png" class="img-fluid">
+                                </di>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <div class="white-boxes p-4 h-100">
+                                <div class="d-flex flex-column">
+                                    <h6 class="mb-4 text-darks"><strong>Sales Charts</strong></h6>
+                                    <p class="mb-3">Lorem ipsum dolor sit amet consectetur</p>
+                                    <div class="btn-group btn-group-toggle w-50 " data-toggle="buttons">
+                                        <label class="btn btn btn-outline-secondary border-gray">
+                                            <input type="radio" name="year1" id="option1" autocomplete="off" checked>
+                                            2015
+                                        </label>
+                                        <label class="btn btn btn-outline-secondary border-gray">
+                                            <input type="radio" name="year2" id="option2" autocomplete="off">
+                                            2016
+                                        </label>
+                                    </div>
+                                    <di class="d-flex my-auto">
+                                        <img src="assets/images/chart8.png" class="img-fluid">
+                                    </di>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social -->
+                    <div class="row mx-2 mt-6">
+                        <div class="col-sm-12 col-md-4 mb-4">
+                            <div class="white-boxes p-5">
+                                <div class="d-flex justify-content-center">
+                                    <span class="fa fa-facebook text-darks white-boxes-icon text-dark-blue mr-3"
+                                        aria-hidden="true"></span>
+                                    <div class="d-flex flex-column">
+                                        <h6 class="text-dark-blue mb-1"><strong>15 Likes</strong></h6>
+                                        <small class="text-lights">You main list growing !</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-4 mb-4">
+                            <div class="white-boxes p-5">
+                                <div class="d-flex justify-content-center">
+                                    <span class="fa fa-twitter text-darks white-boxes-icon text-primarys mr-3"
+                                        aria-hidden="true"></span>
+                                    <div class="d-flex flex-column">
+                                        <h6 class="text-primarys mb-1"><strong>15 Likes</strong></h6>
+                                        <small class="text-lights">You main list growing !</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-4 mb-4">
+                            <div class="white-boxes p-5">
+                                <div class="d-flex justify-content-center">
+                                    <span class="fa fa-linkedin text-darks white-boxes-icon text-blue mr-3"
+                                        aria-hidden="true"></span>
+                                    <div class="d-flex flex-column">
+                                        <h6 class="text-blue mb-1"><strong>15 Likes</strong></h6>
+                                        <small class="text-lights">You main list growing !</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-4 mb-4">
+                            <div class="white-boxes p-5">
+                                <div class="d-flex justify-content-center">
+                                    <img src="assets/images/user-profile2.png" class="mr-3">
+                                    <div class="d-flex flex-column">
+                                        <h6 class="mb-0 pb-1"><strong>15 Likes</strong></h6>
+                                        <small class="text-lights pb-1">You main list growing !</small>
+                                        <h6 class="text-success mb-0"><strong>15 Likes</strong></h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-4 mb-4">
+                            <div class="white-boxes p-5">
+                                <div class="d-flex justify-content-center">
+                                    <img src="assets/images/user-profile2.png" class="mr-3">
+                                    <div class="d-flex flex-column">
+                                        <h6 class="mb-0 pb-1"><strong>15 Likes</strong></h6>
+                                        <small class="text-lights pb-1">You main list growing !</small>
+                                        <h6 class="text-success mb-0"><strong>15 Likes</strong></h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-4 mb-4">
+                            <div class="white-boxes p-5">
+                                <div class="d-flex justify-content-center">
+                                    <img src="assets/images/user-profile2.png" class="mr-3">
+                                    <div class="d-flex flex-column">
+                                        <h6 class="mb-0 pb-1"><strong>15 Likes</strong></h6>
+                                        <small class="text-lights pb-1">You main list growing !</small>
+                                        <h6 class="text-success mb-0"><strong>15 Likes</strong></h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- start: content body end-->
+        </main>
+        <!-- end: content wrapper end-->
+    </div>
+    <!-- end: wrapper -->
+
+    <!-- Javascript -->
+    <script src="./assets/vendor/jquery/jquery-3.3.1.slim.min.js"></script>
+    <script src="./assets/vendor/bootstrap/js/popper.min.js"></script>
+    <script src="./assets/vendor/bootstrap/js/bootstrap.min.js"></script>
 </body>
+
 </html>
